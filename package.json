@@ -1,11 +1,14 @@
 {
   "name": "demucs",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "license": "SEE LICENSE IN LICENSE.md",
-  "repository": "github:bakkot/demucs-js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bakkot/demucs-js.git"
+  },
   "type": "module",
   "bin": {
-    "demucs": "./dist/cli.js"
+    "demucs": "dist/cli.js"
   },
   "scripts": {
     "check": "tsc",
