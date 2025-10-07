@@ -1,0 +1,6 @@
+separated/
+node_modules/
+.claude/
+build-web
+*.wav
+dist/

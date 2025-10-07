@@ -1,0 +1,31 @@
+{
+  "name": "demucs",
+  "version": "0.0.1",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "repository": "github:bakkot/demucs-js",
+  "type": "module",
+  "bin": {
+    "demucs": "./dist/cli.js"
+  },
+  "scripts": {
+    "check": "tsc",
+    "build": "npm run build-node && npm run build-web",
+    "build-node": "tsc -p tsconfig.build-node.json",
+    "build-web": "esbuild web/worker.ts --bundle --alias:onnxruntime-node=onnxruntime-web --outfile=build-web/worker.js && esbuild web/index.ts --bundle --outfile=build-web/index.js && cp -r node_modules/onnxruntime-web/dist/* web/index.html web/*.css htdemucs.onnx build-web/"
+  },
+  "main": "./src/apply.ts",
+  "files": [
+    "dist/",
+    "htdemucs.onnx"
+  ],
+  "dependencies": {
+    "@mediabunny/mp3-encoder": "^1.23.0",
+    "mediabunny": "^1.23.0",
+    "onnxruntime-node": "^1.23.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.10",
+    "onnxruntime-web": "1.23.0",
+    "typescript": "^5.9.3"
+  }
+}

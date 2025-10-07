@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Demucs</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="top">
+      <div>
+        <h2>Demucs stem splitter</h2>
+        <p>Split songs into vocals/drums/bass/other.</p>
+        <p>Runs in your browser, so this is free and also kinda slow (expect it to take about as much time as it would to play the song). The first time you run this it will download a ~200MB ML model.</p>
+        <p>Derived from the MIT-licensed <a href="https://github.com/facebookresearch/demucs">Demucs</a> Python library by Meta. For personal or research use only. See source or open issues <a href="https://github.com/bakkot/demucs-js">on GitHub</a>.</p>
+        <p id="noWebgpu" style="display: none">WARNING: Your browser does not support WebGPU, so this will be <em>very</em> slow.</p>
+      </div>
+      <input type="file" id="fileInput" accept=".wav,.mp3" />
+      <button id="fileButton">Choose File</button>
+      <div id="progress"></div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
